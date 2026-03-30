@@ -5,17 +5,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 var config = new EngineConfig
 {
-    ConnectionString = "Data Source=.;Initial Catalog=Emerald5;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;",
-    CaseSensitive = false,
+    ConnectionString = "Data Source=.;Initial Catalog=MyDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;",
     AllowedTables = "MasterAccounts|subaccounts|Invoices",
-    BlockedFields = "Password",
-    MaxNestedLevel = 3,
-    MaxRows = 100,
-    MaxFields = 30,
-    MaxParameters = 10,
-    MaxJsonLength = 262144,
-    MaxQueryLength = 2048,
-    CommandTimeout = 15
+    BlockedFields = "Password|OTP|Pin",
+
+    //------------------------------------------------------------------
+    // Uncomment and adjust the following settings if you need
+    //------------------------------------------------------------------
+    // MaxNestedLevel  = 3,        // Max subquery nesting depth
+    // MaxRows         = 100,      // Max rows returned per query
+    // MaxFields       = 30,       // Max fields across entire query
+    // MaxParameters   = 10,       // Max SQL parameters per request
+    // MaxJsonLength   = 262144,   // 256KB max response size
+    // MaxQueryLength  = 2048,     // 2KB max request payload
+    // CommandTimeout  = 15        // SQL execution timeout in seconds
 };
 
 builder.Services.AddSingleton(config);
