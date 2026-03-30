@@ -5,7 +5,7 @@ A lightweight, secure data engine framework for **ASP.NET Core** that lets you q
 ---
 
 ## 🏗️ Architecture
-![Alt text](relative/path/to/diagram.png)
+![Alt text](/diagram.png)
 
 ---
 
